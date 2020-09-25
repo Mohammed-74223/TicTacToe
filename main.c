@@ -20,6 +20,7 @@ int insert(){
     char array1[3][3]={{'1','2','3'}, {'4', '5', '6'}, {'7', '8','9'}};
     int player=0;
     int scanplayer;
+    int num=0;
     char symbol;
     for(int i =0; i<9; i++){
         scanplayer=checkplayerround(player);
@@ -35,41 +36,75 @@ int insert(){
         scanf("%d", &placeholder);
         if (placeholder==1){
             array1[0][0]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
         if (placeholder==2){
             array1[0][1]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
         if (placeholder==3){
             array1[0][2]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
         if (placeholder==4){
             array1[1][0]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
         if (placeholder==5){
             array1[1][1]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
         if (placeholder==6){
             array1[1][2]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
         if (placeholder==7){
             array1[2][0]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
         if (placeholder==8){
             array1[2][1]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
         if (placeholder==9){
             array1[2][2]=symbol;
+            printf("\n");
             printTicTacToe(array1);
         }
+        if ((array1[0][0]=='X' && array1[0][1]=='X' && array1[0][2]=='X') ||
+        (array1[0][0]=='X' && array1[1][0]=='X' && array1[2][0]=='X') ||
+        (array1[0][0]=='X' && array1[1][1]=='X' && array1[2][2]=='X')
+        || (array1[1][0]=='X' && array1[1][1]=='X' && array1[1][2]=='X') ||
+        (array1[0][2]=='X' && array1[1][1]=='X' && array1[2][0]=='X') || (array1[0][2]=='X' && array1[1][2]=='X'
+        && array1[2][2]=='X') || (array1[0][1]=='X' && array1[1][1]=='X' && array1[2][1]=='X') ||
+        (array1[2][0]=='X' && array1[2][1]=='X' && array1[2][2]=='X')){
+            printf(" First player wins");
+            num++;
+            break;
         }
+        if ((array1[0][0]=='O' && array1[0][1]=='O' && array1[0][2]=='O') ||
+            (array1[0][0]=='O' && array1[1][0]=='O' && array1[2][0]=='O') ||
+            (array1[0][0]=='O' && array1[1][1]=='O' && array1[2][2]=='O')
+            || (array1[1][0]=='O' && array1[1][1]=='O' && array1[1][2]=='O') ||
+            (array1[0][2]=='O' && array1[1][1]=='O' && array1[2][0]=='O') || (array1[0][2]=='O' && array1[1][2]=='O'
+            && array1[2][2]=='O') || (array1[0][1]=='O' && array1[1][1]=='O' && array1[2][1]=='O') ||
+            (array1[2][0]=='O' && array1[2][1]=='O' && array1[2][2]=='O')){
+            printf(" Second player wins");
+            num++;
+            break;
+        }
+}
+    if (num==0){
+        printf("Draw no one wins");
+    }
 }
 
 
