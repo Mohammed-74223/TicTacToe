@@ -14,21 +14,30 @@ int checkplayersymbol(){
     }else {
         printf("Invalid Input, Try again\n");
     }*/
+    system("");
+    printf("\033[1;32m");
     printf("First player is X\n");
     printf("Second player is O\n");
+    printf("\033[0m");
     printf("\n");
     return 0;
 }
 
 
 int printTicTacToe(char array2[3][3]){ // two print the basic game board and then print the game after being updated
-    system("cls");
+    system("");
     checkplayersymbol();
+    printf("\033[1;31m");
     printf("\t%c\t|\t%c\t|\t%c\t\n", array2[0][0], array2[0][1], array2[0][2]);
+    printf("\033[0m");
     printf("----------------|---------------|---------------\n");
+    printf("\033[1;34m");
     printf("\t%c\t|\t%c\t|\t%c\t\n", array2[1][0], array2[1][1], array2[1][2]);
+    printf("\033[0m");
     printf("----------------|---------------|---------------\n");
+    printf("\033[0;36m");
     printf("\t%c\t|\t%c\t|\t%c\t\n", array2[2][0], array2[2][1], array2[2][2]);
+    printf("\033[0m");
     printf("\n");
     return 0;
 }
@@ -54,10 +63,14 @@ int insert(){
     for(int i =0; i<9;){
         scanplayer=checkplayerround(player); // to know the either player one or player two
         if (scanplayer==1){
+            printf("\033[1;36m");
             printf("Player One turn\n");
+            printf("\033[0m");
             symbol='X'; // if the it's the first player then, the symbol would be "x"
         } else{
+            printf("\033[1;36m");
             printf("PLayer Two turn\n");
+            printf("\033[0m");
             symbol='O'; // the symbol would be "o"
         }
         printf("Enter the number: ");
