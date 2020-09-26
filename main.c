@@ -25,7 +25,7 @@ int checkplayersymbol(){
 
 
 int printTicTacToe(char array2[3][3]){ // two print the basic game board and then print the game after being updated
-    system("");
+    system("cls");
     checkplayersymbol();
     printf("\033[1;31m");
     printf("\t%c\t|\t%c\t|\t%c\t\n", array2[0][0], array2[0][1], array2[0][2]);
