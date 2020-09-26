@@ -1,13 +1,35 @@
 #include <stdio.h>
+#include <stdlib.h>
 
+
+
+
+int checkplayersymbol(){
+    /*if(symbol=='X' || symbol=='x'){
+        printf("First player symbol: X\n");
+        printf("Second Player symbol: O\n");
+    } else if (symbol=='O' || symbol=='o'){
+        printf("First player symbol: O\n");
+        printf("Second Player symbol: X\n");
+    }else {
+        printf("Invalid Input, Try again\n");
+    }*/
+    printf("First player is X\n");
+    printf("Second player is O\n");
+    printf("\n");
+    return 0;
+}
 
 
 int printTicTacToe(char array2[3][3]){ // two print the basic game board and then print the game after being updated
+    system("cls");
+    checkplayersymbol();
     printf("\t%c\t|\t%c\t|\t%c\t\n", array2[0][0], array2[0][1], array2[0][2]);
     printf("----------------|---------------|---------------\n");
     printf("\t%c\t|\t%c\t|\t%c\t\n", array2[1][0], array2[1][1], array2[1][2]);
     printf("----------------|---------------|---------------\n");
     printf("\t%c\t|\t%c\t|\t%c\t\n", array2[2][0], array2[2][1], array2[2][2]);
+    printf("\n");
     return 0;
 }
 int checkplayerround(int num){ // to check the round of players
@@ -33,7 +55,7 @@ int insert(){
         scanplayer=checkplayerround(player); // to know the either player one or player two
         if (scanplayer==1){
             printf("Player One turn\n");
-           symbol='X'; // if the it's the first player then, the symbol would be "x"
+            symbol='X'; // if the it's the first player then, the symbol would be "x"
         } else{
             printf("PLayer Two turn\n");
             symbol='O'; // the symbol would be "o"
@@ -104,12 +126,12 @@ int insert(){
             printTicTacToe(array1);
         }
         if ((array1[0][0]=='X' && array1[0][1]=='X' && array1[0][2]=='X') ||
-        (array1[0][0]=='X' && array1[1][0]=='X' && array1[2][0]=='X') ||
-        (array1[0][0]=='X' && array1[1][1]=='X' && array1[2][2]=='X')
-        || (array1[1][0]=='X' && array1[1][1]=='X' && array1[1][2]=='X') ||
-        (array1[0][2]=='X' && array1[1][1]=='X' && array1[2][0]=='X') || (array1[0][2]=='X' && array1[1][2]=='X'
-        && array1[2][2]=='X') || (array1[0][1]=='X' && array1[1][1]=='X' && array1[2][1]=='X') ||
-        (array1[2][0]=='X' && array1[2][1]=='X' && array1[2][2]=='X')){ // to check all possible winning cases for x
+            (array1[0][0]=='X' && array1[1][0]=='X' && array1[2][0]=='X') ||
+            (array1[0][0]=='X' && array1[1][1]=='X' && array1[2][2]=='X')
+            || (array1[1][0]=='X' && array1[1][1]=='X' && array1[1][2]=='X') ||
+            (array1[0][2]=='X' && array1[1][1]=='X' && array1[2][0]=='X') || (array1[0][2]=='X' && array1[1][2]=='X'
+            && array1[2][2]=='X') || (array1[0][1]=='X' && array1[1][1]=='X' && array1[2][1]=='X') ||
+            (array1[2][0]=='X' && array1[2][1]=='X' && array1[2][2]=='X')){ // to check all possible winning cases for x
             printf(" First player wins");
             num++;
             break;
@@ -125,7 +147,7 @@ int insert(){
             num++;
             break;
         }
-}
+    }
     if (num==0){
         printf("Draw no one wins"); // to check if the game ends with draw case
     }
@@ -134,26 +156,9 @@ int insert(){
 
 
 
-int checkplayersymbol(){
-    /*if(symbol=='X' || symbol=='x'){
-        printf("First player symbol: X\n");
-        printf("Second Player symbol: O\n");
-    } else if (symbol=='O' || symbol=='o'){
-        printf("First player symbol: O\n");
-        printf("Second Player symbol: X\n");
-    }else {
-        printf("Invalid Input, Try again\n");
-    }*/
-    printf("First player is X\n");
-    printf("Second player is O\n");
-    return 0;
-}
-
 int main(){ // calling the functions here
     char array1[3][3]={{'1','2','3'}, {'4', '5', '6'}, {'7', '8','9'}};
-    /*printf("Enter First player symbol: ");
-    scanf("%c", &playerOne);*/
-    checkplayersymbol();
     printTicTacToe(array1);
     insert();
+
 }
